@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     EMAIL_VERIFICATION_TOKEN_EXPIRE_HOURS: int = 24
 
     DATABASE_URL: str
+    ALEMBIC_DATABASE_URL: str
 
     #Email
     MAIL_USERNAME: str
@@ -36,6 +37,14 @@ class Settings(BaseSettings):
 
     #Cors
     FRONTEND_URL: str
+
+    LOG_LEVEL: str = "INFO"
+
+    # Celery
+    CELERY_TASK_ALWAYS_EAGER: bool = False
+    CELERY_WORKER_PREFETCH_MULTIPLIER: int = 1
+    CELERY_TASK_TIME_LIMIT: int = 300
+    CELERY_TASK_SOFT_TIME_LIMIT: int = 120
 
     class Config:
         env_file= ".env"

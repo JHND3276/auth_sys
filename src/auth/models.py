@@ -1,11 +1,11 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.sql import func
 from src.core.database import Base
-from config.settings import Config
+
 
 class User(Base):
     __tablename__ = "users"
-    __table_args__ = {"schema": Config.DATABASE_SCHEMA}
+    __table_args__ = {"schema": "sys"}
 
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
