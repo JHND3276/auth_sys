@@ -1,5 +1,5 @@
 from fastapi_mail import FastMail, ConnectionConfig
-from ...config.settings import Config
+from config.settings import Config
 
 mail_config = ConnectionConfig(
     MAIL_USERNAME=Config.MAIL_USERNAME,
